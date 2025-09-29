@@ -1,0 +1,177 @@
+.course-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 16px rgba(92, 90, 195, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #f1f3f4;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #e54798, #ff6bb3, #5c5ac3);
+        transform: scaleX(0);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform-origin: left;
+    }
+
+    &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 16px 48px rgba(92, 90, 195, 0.15);
+        border-color: rgba(92, 90, 195, 0.2);
+
+        &::before {
+            transform: scaleX(1);
+        }
+
+        .course-icon {
+            color: #e54798;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .course-title {
+            color: #e54798;
+        }
+
+        .explore-btn {
+            color: #e54798;
+            gap: 10px;
+            transform: translateX(2px);
+
+            &::after {
+                transform: translateX(4px) scale(1.2);
+            }
+        }
+    }
+
+    .course-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 10;
+
+        .course-icon {
+            width: 32px;
+            height: 32px;
+            color: #5c5ac3;
+            flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    .course-description {
+        font-size: 15px;
+        color: #5a6c7d;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        position: relative;
+        z-index: 10;
+    }
+
+    .course-count {
+        background: #f0f0ff;
+        color: #5b5ac3;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 18px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        position: relative;
+        z-index: 10;
+        border: 1px solid #e0e0ff;
+
+        &::before {
+            content: '•';
+            color: #5b5ac3;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    .course-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 10;
+
+        .tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+
+            &:hover {
+                background: #e54798;
+                color: white;
+                transform: translateY(-2px) scale(1.05);
+                border-color: #e54798;
+                box-shadow: 0 4px 12px rgba(229, 71, 152, 0.3);
+            }
+        }
+    }
+
+    .explore-btn {
+        color: #5c5ac3;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        padding: 4px 0;
+        position: relative;
+        z-index: 10;
+
+        &::after {
+            content: '→';
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .course-card {
+        padding: 24px;
+
+        &:hover {
+            transform: translateY(-4px) scale(1.01);
+        }
+    }
+}

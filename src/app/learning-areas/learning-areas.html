@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="section-title">Aree di studio</div>
+    <div class="section-subtitle">Esplora le nostre aree formative</div>
+
+    <div class="courses-grid">
+        @for (area of areas; track $index) {
+        <app-area-card [area]="area"></app-area-card>
+        }
+
+    </div>
+</div>

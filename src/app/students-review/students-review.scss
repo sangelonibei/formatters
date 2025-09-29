@@ -1,0 +1,341 @@
+.body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #504aae;
+    min-height: 100vh;
+    padding: 60px 20px;
+    position: relative;
+    overflow-x: hidden;
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+            radial-gradient(circle at 75% 25%, rgba(255, 107, 157, 0.08) 0%, transparent 60%),
+            radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: -1;
+    }
+}
+
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+
+    .title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-weight: 400;
+    }
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+
+    .review-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(139, 92, 246, 0.15) 50%,
+                    transparent 100%);
+            transition: left 0.8s ease;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            left: 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 2px;
+            background: linear-gradient(135deg, #ff6b9d, #8b5cf6);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+        &:hover {
+            transform: translateY(-12px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 60px rgba(139, 92, 246, 0.2);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+
+            .avatar {
+                width: 72px;
+                height: 72px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #ff6b9d, #8b5cf6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 700;
+                font-size: 1.5rem;
+                margin-right: 20px;
+                box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+                transition: all 0.4s ease;
+            }
+        }
+
+        &:hover .avatar {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .student-info {
+            h3 {
+                color: #ffffff;
+                font-size: 1.2rem;
+                margin-bottom: 6px;
+                font-weight: 600;
+            }
+
+            .student-course {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.95rem;
+                font-weight: 500;
+            }
+        }
+
+        .review-text {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+
+            &::before {
+                content: '"';
+                font-size: 4rem;
+                color: rgba(139, 92, 246, 0.3);
+                position: absolute;
+                top: -20px;
+                left: -10px;
+                font-family: Georgia, serif;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.stats-section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border-radius: 32px;
+    padding: 60px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b9d, #8b5cf6);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+
+        .stat-item {
+            text-align: center;
+            transition: all 0.4s ease;
+            padding: 30px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 20px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+                font-weight: 900;
+                color: #ffffff;
+                margin-bottom: 12px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .stat-label {
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 0.9rem;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+
+    .shape {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .shape-1 {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(45deg, #ff6b9d, #8b5cf6);
+        border-radius: 50%;
+        top: 15%;
+        left: 8%;
+        animation-delay: 0s;
+    }
+
+    .shape-2 {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #8b5cf6, #ff6b9d);
+        border-radius: 20px;
+        top: 70%;
+        right: 12%;
+        animation-delay: 3s;
+    }
+
+    .shape-3 {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #ff6b9d, #8b5cf6);
+        border-radius: 50%;
+        bottom: 25%;
+        left: 15%;
+        animation-delay: 6s;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-25px) rotate(120deg);
+    }
+
+    66% {
+        transform: translateY(-15px) rotate(240deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .body {
+        padding: 40px 16px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+        .review-card {
+            padding: 32px 24px;
+        }
+    }
+
+    .stats-section {
+        padding: 40px 24px;
+
+        .stat-item {
+            .stat-number {
+                font-size: 2.8rem;
+            }
+        }
+    }
+}

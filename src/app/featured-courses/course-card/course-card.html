@@ -1,0 +1,19 @@
+<div class="course-card">
+    <div class="course-image" [ngStyle]="{'background-image': 'url(' + course().image + ')'}">
+      <div class="course-tag">{{ course().tag }}</div>
+    </div>
+
+    <div class="course-content">
+      <div class="course-top-content">
+        <h3 class="course-title">{{ course().title }}</h3>
+        <p class="course-description">{{ course().description }}</p>
+        <div class="course-meta">
+          {{course().category}}
+        </div>
+      </div>
+      <div class="course-bottom-content">
+        <div class="course-date">Data partenza: {{ course().date }}</div>
+        <button class="course-btn">Scopri di più</button>
+      </div>
+    </div>
+  </div>

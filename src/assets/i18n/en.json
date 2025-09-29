@@ -1,0 +1,8 @@
+{
+    "footer": {
+        "brand_description":"Formatters is <a href='https://digitalityconsulting.com' target='_blank'>Digitality Consulting</a>'s professional training center, accredited for the qualification and development of digital and professional skills.",
+        "copyright" : "© {{copyrightYear}} Formatters - Educational center of ",
+        "rights" : "All rights reserved",
+        "vat": "VAT"
+    }
+}

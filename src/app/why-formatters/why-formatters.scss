@@ -1,0 +1,51 @@
+.why-formatters {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fff;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5b5ac3; // viola simile all'immagine
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+  }
+
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    .feature {
+      max-width: 250px;
+      text-align: center;
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+        filter: invert(32%) sepia(56%) saturate(2000%) hue-rotate(220deg) brightness(90%) contrast(90%);
+        // questo ti permette di colorare le icone in viola senza doverle editare
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+    }
+  }
+}
+

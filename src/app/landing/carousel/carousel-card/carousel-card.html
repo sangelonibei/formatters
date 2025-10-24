@@ -1,0 +1,19 @@
+<div class="course-card" [class.active]="active()">
+  <div class="info-badge">{{ course().badge }}</div>
+  <h1 class="course-title">{{ course().title }}</h1>
+  <p class="course-description">{{ course().description }}</p>
+
+  <div class="course-stats">
+    <div class="stat">
+      <span class="stat-number">{{ course().duration }}</span>
+      <span class="stat-label">DURATA</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ course().startDate }}</span>
+      <span class="stat-label">DATA INIZIO</span>
+    </div>
+  </div>
+
+  <button class="cta-button" (click)="onDiscoverMore(course())">Scopri di più</button>
+  <div class="progress-bar"></div>
+</div>

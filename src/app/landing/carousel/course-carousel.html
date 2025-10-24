@@ -1,0 +1,84 @@
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <img src="assets/images/logo-formatters.png" alt="Formatters Logo" class="logo-image">
+    </div>
+    
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      @for (item of navItems; track item.id) {
+        <li><a [href]="item.href">{{ item.label }}</a></li>
+      }
+    </ul>
+    
+    <!-- Desktop Buttons -->
+    <div class="nav-buttons">
+      <a href="#" class="btn-gradient">Contattaci</a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger-btn" (click)="toggleMobileMenu()" [class.active]="mobileMenuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" [class.active]="mobileMenuOpen()">
+    <ul class="mobile-nav-list">
+      @for (item of navItems; track item.id) {
+        <li>
+          <a [href]="item.href" (click)="closeMobileMenu()">{{ item.label }}</a>
+        </li>
+      }
+      <li class="mobile-cta">
+        <a href="#" class="btn-gradient" (click)="closeMobileMenu()">Contattaci</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="main-container">
+  <div class="hero-section">
+    <h1 class="hero-title">Scopri i nostri corsi in partenza</h1>
+    <p class="hero-subtitle">
+      Impara da esperti del settore e dai un boost alla tua carriera con i nostri corsi riconosciuti a livello internazionale
+    </p>
+  </div>
+
+  <div class="carousel-container">
+    <div 
+      class="carousel-track" 
+      [style.transform]="'translateX(-' + currentSlide() * 100 + '%)'">
+      @for (course of courses(); track course.id) {
+        <div [class]="'course-card ' + course.cardClass">
+          <div class="info-badge">{{ course.badge }}</div>
+          <h1 class="course-title">{{ course.title }}</h1>
+          <p class="course-description">{{ course.description }}</p>
+          <div class="course-stats">
+            <div class="stat">
+              <span class="stat-number">{{ course.duration }}</span>
+              <span class="stat-label">DURATA</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">{{ course.startDate }}</span>
+              <span class="stat-label">DATA INIZIO</span>
+            </div>
+          </div>
+          <button class="cta-button" (click)="onDiscoverMore(course)">Scopri di più</button>
+        </div>
+      }
+    </div>
+
+    <div class="carousel-navigation">
+      @for (course of courses(); track course.id; let i = $index) {
+        <div 
+          [class.active]="currentSlide() === i"
+          class="nav-dot"
+          (click)="goToSlide(i)">
+        </div>
+      }
+    </div>
+  </div>
+</div>

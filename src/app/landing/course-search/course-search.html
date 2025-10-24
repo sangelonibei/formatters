@@ -1,0 +1,32 @@
+<section class="course-search">
+  <h2>Trova il corso perfetto per te</h2>
+  <p class="subtitle">
+    Esplora la nostra ampia selezione di corsi certificati e trova quello che fa per te
+  </p>
+
+  <div class="search-box">
+    <input 
+      type="text" 
+      placeholder="Cerca un corso..." 
+      [(ngModel)]="searchTerm" 
+      (keyup.enter)="onSearch()" 
+    />
+    <button (click)="onSearch()">
+      <fa-icon [icon]="searchIcon"></fa-icon>
+    </button>
+  </div>
+
+  <a href="#" class="all-courses">oppure vedi tutti i corsi →</a>
+
+  <div class="popular">
+    <p>Ricerche popolari:</p>
+    <div class="tags">
+        @for(course of popularCourses; track $index) {
+            <button >
+              {{ course }}
+            </button>
+        }
+      
+    </div>
+  </div>
+</section>

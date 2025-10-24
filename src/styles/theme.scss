@@ -1,0 +1,71 @@
+// Primary colors
+$color-primary: #5c5ac3;
+$color-primary-light: #f0f0ff;
+$color-primary-dark: #2c3e50;
+
+// Accent colors
+$color-accent: #e54798;
+$color-accent-light: #ff6bb3;
+$color-accent-dark: #c2185b;
+
+// Neutral colors
+$color-background: #fff;
+$color-background-alt: #f8f9fa;
+$color-background-page: #f5f5f5;
+$color-border: #f1f3f4;
+$color-border-light: #e0e0ff;
+$color-border-tag: #e9ecef;
+
+// Text colors
+$color-text-main: #2c3e50;
+$color-text-secondary: #666;
+$color-text-tertiary: #5a6c7d;
+$color-text-tag: #495057;
+
+// Shadows
+$shadow-card: 0 2px 16px rgba(92, 90, 195, 0.08);
+$shadow-card-hover: 0 16px 48px rgba(92, 90, 195, 0.15);
+$shadow-tag-hover: 0 4px 12px rgba(229, 71, 152, 0.3);
+
+// Gradients
+$gradient-accent: linear-gradient(135deg, #e54798, #ff6bb3, #5c5ac3);
+
+// Font
+$font-family-base: 'Segoe UI', 'Roboto', Arial, sans-serif;
+$font-size-base: 1rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.1rem;
+$font-size-title: 20px;
+$font-size-subtitle: 1.1rem;
+$font-size-feature: 0.95rem;
+$font-size-description: 15px;
+$font-size-tag: 12px;
+$font-size-btn: 14px;
+
+// Spacing
+$spacing-section-padding: 3rem 1rem;
+$spacing-card-padding: 32px;
+$spacing-card-padding-mobile: 24px;
+$spacing-gap: 3rem;
+$spacing-gap-header: 12px;
+$spacing-gap-tags: 8px;
+$spacing-margin-bottom-h2: 0.5rem;
+$spacing-margin-bottom-subtitle: 2.5rem;
+$spacing-margin-bottom-feature-title: 0.5rem;
+$spacing-margin-bottom-img: 1rem;
+$spacing-margin-bottom-header: 16px;
+$spacing-margin-bottom-description: 12px;
+$spacing-margin-bottom-tags: 24px;
+$spacing-margin-bottom-count: 18px;
+
+// Border radius
+$radius-card: 16px;
+$radius-tag: 20px;
+$radius-count: 6px;
+
+// Transition
+$transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-card: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+// Icon filter
+$icon-filter-primary: invert(32%) sepia(56%) saturate(2000%) hue-rotate(220deg) brightness(90%) contrast(90%);

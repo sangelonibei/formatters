@@ -1,0 +1,110 @@
+
+@import '../../styles/theme.scss';
+
+.course-search {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #f8faff 0%, #f3f5fb 100%);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: $color-text-secondary;
+    margin-bottom: 2rem;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-background;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem;
+
+    input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border-radius: 50px;
+    }
+
+    button {
+      background: $color-primary;
+      border: none;
+      color: $color-background;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(90,79,207,0.3);
+
+      &:hover {
+        background-color: $color-primary-dark;
+      }
+      .material-icons {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .all-courses {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: $color-primary;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .popular {
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: $color-text-tertiary;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+
+      button {
+        border: 1px solid #ddd;
+        background: $color-background;
+        color: $color-text-secondary;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $color-accent;
+          color: #fff;
+          border: none;
+          box-shadow: 0 3px 10px #EB4D9A66;
+           transform:  translateY(-8px) scale(1.1);
+        }
+      }
+    }
+  }
+}

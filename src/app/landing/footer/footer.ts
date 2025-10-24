@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
-  imports: [FormsModule, TranslatePipe],
+  imports: [FormsModule, TranslatePipe, FaIconComponent],
   templateUrl: './footer.html',
   styleUrl: './footer.scss'
 })
@@ -12,6 +14,7 @@ export class Footer {
   email: string = '';
   consent: boolean = false;
   copyrightYear = new Date().getFullYear();
+  faPhone = faPhone
 
   onSubscribe() {
     if (this.email && this.consent) {
